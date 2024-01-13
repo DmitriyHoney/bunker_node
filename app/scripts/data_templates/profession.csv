@@ -1,0 +1,77 @@
+type,name,is_default
+profession,Уролог
+profession,Разнорабочий
+profession,Правовед
+profession,Военнослужащий
+profession,Плотник
+profession,Животновод
+profession,Филолог
+profession,Каскадер
+profession,Спортивный врач
+profession,Рыбак
+profession,Невролог
+profession,Программист сайтов
+profession,Музыкант
+profession,Мусоропроводчик
+profession,Дизайнер
+profession,Специалист по стрижке овец
+profession,Критик
+profession,Психолог
+profession,Археолог
+profession,Профессор истории
+profession,Инженер строитель
+profession,Инфоцыган
+profession,Разработчик сайтов на битрикс
+profession,Грузчик
+profession,Закладчик
+profession,Хирург
+profession,Гинеколог
+profession,Формацевт
+profession,Участковый
+profession,Дворник
+profession,Швея
+profession,Таксист
+profession,Шахматист
+profession,Слесарь
+profession,Автомеханик
+profession,Кондуктор
+profession,Телеведущий
+profession,Пастух
+profession,Гос служащий
+profession,Экскурсовод
+profession,Библиотекарь
+profession,Математик
+profession,Тренер по физ подготовке
+profession,Пропагандист
+profession,Лётчик испытатель
+profession,Снайпер
+profession,Кинокритик
+profession,Дипломат
+profession,Водитель автобуса
+profession,Егерь
+profession,Агроном
+profession,Адвокат
+profession,Альпинист
+profession,Археолог
+profession,Астролог
+profession,Бариста
+profession,Блогер
+profession,Боксёр
+profession,Боец спецназа
+profession,Браконьер
+profession,Вирусолог
+profession,Визажист
+profession,Диджей
+profession,Геолог
+profession,Иммунолог
+profession,Клоун
+profession,Писатель
+profession,Пожарный
+profession,Повар
+profession,Порноактер
+profession,Радист
+profession,Психотерапевт
+profession,Священник
+profession,Шахтёр
+profession,Электрик
+profession,Безработный,true
