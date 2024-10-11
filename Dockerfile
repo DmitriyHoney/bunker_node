@@ -1,6 +1,6 @@
 FROM node:latest
 
-WORKDIR .
+WORKDIR ./backend
 
 COPY package.json .
 COPY yarn.lock .
@@ -8,8 +8,8 @@ COPY yarn.lock .
 RUN yarn install && \
     yarn cache clean --force
 
-RUN yarn install
+RUN npm install -g nodemon
 
-COPY . ./
+COPY . .
 
 CMD ["yarn", "dev"]

@@ -16,6 +16,14 @@ const validatorsErrorsMiddleware = (req, res, next) => {
     next();
 };
 
+const isValidParamsUUID = async (req, res, next) => {
+    const isValidUuid = uuid.validate(req.params.uuid);
+    if (!isValidUuid) return res.status(400).json({
+        errorsMessages: [{ message: "Not valid token" }]
+    });
+    else next();
+}
+
 const authMiddleware = async (req, res, next) => {
     if (!req.context) req.context = {};
     if (!req.headers.token) {
@@ -42,7 +50,7 @@ const authMiddleware = async (req, res, next) => {
 
 module.exports = {
     dictionary: { VALIDATION_ERROR_MSG  },
-    common: { validatorsErrorsMiddleware, authMiddleware },
+    common: { validatorsErrorsMiddleware, authMiddleware, isValidParamsUUID },
     room,
     player,
 };

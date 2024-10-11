@@ -3,16 +3,27 @@ const PlayerInfoMap = async (Player) => {
     const room = await Player.getRoom();
     const cards = await Player.getCards();
     const special_cards = await Player.getSpecialCards();
-    const roomSerialize = await RoomInfoMap(room, Player.id);
+    // const roomSerialize = await RoomInfoMap(room, Player.id);
     return {
         id: Player.id,
         username: Player.username,
         is_owner: Player.is_owner,
         is_dropped: Player.is_dropped,
-        room: roomSerialize,
+        room: room.id,
         cards,
         special_cards,
     }
 };
 
-module.exports = { PlayerInfoMap };
+const PlayerInfoMapLite = async (Player) => {
+    const room = await Player.getRoom();
+    return {
+        id: Player.id,
+        username: Player.username,
+        is_owner: Player.is_owner,
+        is_dropped: Player.is_dropped,
+        room: room.id,
+    }
+};
+
+module.exports = { PlayerInfoMap, PlayerInfoMapLite };

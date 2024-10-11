@@ -1,8 +1,9 @@
-const { PlayerInfoMap } = require('./player');
+const { PlayerInfoMap, PlayerInfoMapLite } = require('./player');
 const { RoomInfoMap } = require('./room');
 module.exports = {
     player: {
-        PlayerInfoMap
+        PlayerInfoMap,
+        PlayerInfoMapLite
     },
     room: {
         RoomInfoMap

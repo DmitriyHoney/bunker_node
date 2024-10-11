@@ -7,7 +7,7 @@ exports.getMe = async (req, res) => {
 
 exports.create = async (req, res) => {
   const room = await Domain.room.getRoomById(req.body.room_id);
-  if (!room) return res.status(404).send({ msg: 'Not found' });
+  if (!room) return res.status(404).send({ msg: 'Room not found' });
 
   if (room.is_game_start || room.is_game_end) return res.status(400).json({ msg: 'Game already start' });
 
@@ -17,6 +17,14 @@ exports.create = async (req, res) => {
   const checkUniqueNameInRoom = roomPlayers.find((p) => p.username === req.body.username);
   if (checkUniqueNameInRoom) return res.status(400).json('Player this name already exist');
 
-  const Player = await Domain.player.createPlayerWithRoom(room, { username: req.body.username });
+  const Player = await Domain.player.createPlayerWithRoom(
+      room,
+      {
+        username: req.body.username,
+        is_owner: roomPlayers.length === 0
+      });
+
+  const playerMapLite = await Mapping.player.PlayerInfoMapLite(Player);
+  req.socketActions.PLAYER_JOIN_ROOM(room.id, playerMapLite);
   return res.status(200).json(await Mapping.player.PlayerInfoMap(Player));
 }
